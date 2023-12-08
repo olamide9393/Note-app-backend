@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 const Auth = require("./routes/Auth");
 const Note = require("./routes/Note");
 
-const port = process.env.port || 5000;
+const port = process.env.port || 3000;
 const connectDB = require("./connect");
 const { urlencoded } = require("express");
 

@@ -5,10 +5,6 @@ const UserSchema = new Schema({
     required: true,
     type: String,
   },
-  username: {
-    required: true,
-    type: String,
-  },
   email: {
     type: String,
     required: true,
@@ -19,10 +15,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  isAdmin: {
-    type: Boolean,
-    required: false
-  },
+  
 });
 
 module.exports = mongooose.model("UserAuth", UserSchema);
