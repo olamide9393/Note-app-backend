@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 const Auth = require("./routes/Auth");
-const Note = require("./routes/Note");
+const Note = require("./routes/note");
 
 const port = process.env.port || 3000;
 const connectDB = require("./connect");
