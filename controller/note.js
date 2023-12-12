@@ -14,13 +14,19 @@ const createNote = async (req, res) => {
   }
 };
 
-// get all note
+// get  note
 const getNote = async (req, res) => {
   try {
-    const result = await Note.find();
-    res.json({ status: 200, result });
+    const message = await Note.find({ user: req.user.id });
+    console.log("notes ", message.length);
+    res.status(200).json({ message });
+
+    console.log(message, "user message");
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error); 
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching user data." });
   }
 };
 
@@ -34,6 +40,8 @@ const getSingleNote = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+
 
 // update note
 const updateNote = async (req, res) => {
