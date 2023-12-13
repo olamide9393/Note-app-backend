@@ -18,4 +18,4 @@ const UserSchema = new Schema({
   
 });
 
-module.exports = mongooose.model("UserAuth", UserSchema);
+module.exports = mongooose.model("NoteAuth", UserSchema);
