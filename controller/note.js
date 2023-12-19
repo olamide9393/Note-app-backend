@@ -7,6 +7,8 @@ const createNote = async (req, res) => {
     const response = await Note.create({
       title,
       content,
+      user: req.user.id,
+
     });
     res.json({ message: "your note has been added", response });
   } catch (error) {
@@ -18,10 +20,7 @@ const createNote = async (req, res) => {
 const getNote = async (req, res) => {
   try {
     const message = await Note.find({ user: req.user.id });
-    console.log("notes ", message.length);
     res.status(200).json({ message });
-
-    console.log(message, "user message");
   } catch (error) {
     console.log(error); 
     res

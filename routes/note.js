@@ -3,9 +3,9 @@ const { createNote, getNote, updateNote, getSingleNote, deleteNote } = require("
 const VarifyToken = require("../middleware/VarifyToken");
 const router = express.Router();
 
-router.post("/createNote", createNote)
+router.post("/createNote",VarifyToken, createNote)
 router.get("/getNote",VarifyToken, getNote)
-router.post("/updateNote", updateNote)
+router.post("/updateNote",VarifyToken, updateNote)
 router.get("/:id",VarifyToken, getSingleNote)
-router.delete("/deleteNote", deleteNote)
+router.delete("/deleteNote",VarifyToken, deleteNote)
 module.exports = router;
